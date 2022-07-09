@@ -11,17 +11,26 @@
 from os import system
 
 
-system('cls')
-x = float(input('Введите координату "X": '))
-y = float(input('Введите координату "Y": '))
-if x==0 or y==0:
-    print('Ошибка! X или Y не должны быть равны 0!')
-else:    
-    if x > 0 and y > 0:
-       print('X =', x, '; Y =', y, '-> 1')
-    elif x < 0 and y > 0:
-       print('X =', x, '; Y =', y, '-> 2')
-    elif x < 0 and y < 0:
-       print('X =', x, '; Y =', y, '-> 3')
+def find_quarter():
+    system('cls')
+    x = float(input('Введите координату "X": '))
+    y = float(input('Введите координату "Y": '))
+    if x == 0 or y == 0:
+        print('Ошибка! X или Y не должны быть равны 0!')
     else:
-       print('X =', x, '; Y =', y, '-> 4')
+        if x > 0 and y > 0:
+           print('X =', x, '; Y =', y, '-> 1')
+        elif x < 0 and y > 0:
+           print('X =', x, '; Y =', y, '-> 2')
+        elif x < 0 and y < 0:
+           print('X =', x, '; Y =', y, '-> 3')
+        else:
+           print('X =', x, '; Y =', y, '-> 4')
+find_quarter()
+while True:
+    key = input('Попробуем ещё разок? [y/n]: ')
+
+    if key == 'y':
+        find_quarter()
+    else:
+        break

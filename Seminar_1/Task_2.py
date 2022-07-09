@@ -9,6 +9,6 @@ for x in range(2):
             result2 = not(x or y or z)
             print(x,y,z,'   ',result,'            ',result2)
 if result == result2:
-    print('Равенство верно')
+    print('Равенство истинно')
 else:
-    print('Равенство не верно')
+    print('Равенство не ложно')
