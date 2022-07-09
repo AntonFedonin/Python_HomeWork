@@ -11,4 +11,4 @@ for x in range(2):
 if result == result2:
     print('Равенство истинно')
 else:
-    print('Равенство не ложно')
+    print('Равенство ложно')
