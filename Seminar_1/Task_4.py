@@ -3,23 +3,26 @@
 
 from os import system
 
+
 def find_range():
     system('cls')
     quarter = input('Введите номер четверти: ')
-    if quarter.isdigit()==True:
-        quarter=int(quarter)
-        if quarter<0 or quarter>4:
+    if quarter.isdigit() == True:
+        quarter = int(quarter)
+        if quarter < 0 or quarter > 4:
             print('Ошибка! Необходимо значение от 1 до 4')
-        elif quarter==1:
+        elif quarter == 1:
             print('В первой четверти диапозон координат от X до Y')
-        elif quarter==2:
+        elif quarter == 2:
             print('Во второй четверти диапозон координат от -X до Y')
-        elif quarter==3:
+        elif quarter == 3:
             print('В третьей четверти диапозон координат от -X до -Y')
-        elif quarter==4:
+        elif quarter == 4:
             print('В четвёртой четверти диапозон координат от X до -Y')
     else:
-        print('Ошибка! Неодходимо ввести число!')                    
+        print('Ошибка! Неодходимо ввести число!')
+
+
 find_range()
 while True:
     key = input('Попробуем ещё разок? [y/n]: ')
@@ -27,4 +30,4 @@ while True:
     if key == 'y':
         find_range()
     else:
-        break            
+        break
