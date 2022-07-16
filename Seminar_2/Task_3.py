@@ -7,10 +7,10 @@
 
 n = int(input('Введите число: '))
 sum = 0
-lst = {}
+res = {}
 
 for i in range(1, n+1):
-    lst[i] = (1+1/i)**i
-    sum += lst[i]
-print(lst)
+    res[i] = (1+1/i)**i
+    sum += res[i]
+print(res)
 print(sum)
