@@ -8,16 +8,18 @@
 import random
 
 
-# def get_list():                              Хотел сделать функцию заполнения списка. Почему-то она не хочет
-#     list = []                                выполняться. 
-#     for i in range(0, 10):
+# def get_list():  # Хотел сделать функцию заполнения списка. Почему-то она не хочет
+#     list = []  # выполняться.
+#     for item in range(0, 10):
 #         list.append(random.randint(0, 10))
 #     return list
 
-list=[]
-for i in range(0,10):
-    list.append(random.randint(0,10))
-print(list)
+# list=[]
+# for i in range(0,10):
+#     list.append(random.randint(0,10))
+# print(list)
+
+
 def get_sum(list):
     sum = 0
     for i in range(1, len(list), 2):
@@ -29,5 +31,3 @@ def get_sum(list):
 summa = get_sum(list)
 # print(lst)
 print('Сумма равна: ', summa)
-
-
