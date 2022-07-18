@@ -5,8 +5,16 @@
 # - 45 -> 101101
 # - 3 -> 11
 # - 2 -> 10
+def digit_check():
+    try:
+        lenght = int(input('Введите число:\n'))
+        return lenght
+    except ValueError:
+        print('Это должно быть число!\n')
+        digit_check()
 
-num = int(input('Введите число: '))
+
+num = digit_check()
 
 
 def get_binary(number):
@@ -14,7 +22,7 @@ def get_binary(number):
     while number > 0:
         number_binary += str(number % 2)
         number //= 2
-        rev_num_bin=''.join(reversed(number_binary))
+        rev_num_bin = ''.join(reversed(number_binary))
     return rev_num_bin
 
 

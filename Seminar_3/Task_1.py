@@ -8,16 +8,25 @@
 import random
 
 
+def digit_check():
+    try:
+        lenght = int(input('Задайте размер списка:\n'))
+        return lenght
+    except ValueError:
+        print('Это должно быть число!\n')
+        digit_check()
+
+
 # def get_list():  # Хотел сделать функцию заполнения списка. Почему-то она не хочет
 #     list = []  # выполняться.
 #     for item in range(0, 10):
 #         list.append(random.randint(0, 10))
 #     return list
-
-# list=[]
-# for i in range(0,10):
-#     list.append(random.randint(0,10))
-# print(list)
+size = digit_check()
+lst = []
+for i in range(0, size):
+    lst.append(random.randint(0, 10))
+print(lst)
 
 
 def get_sum(list):
@@ -27,7 +36,7 @@ def get_sum(list):
     return sum
 
 
-# lst = [get_list]
-summa = get_sum(list)
+# lst = get_list()
+summa = get_sum(lst)
 # print(lst)
 print('Сумма равна: ', summa)
