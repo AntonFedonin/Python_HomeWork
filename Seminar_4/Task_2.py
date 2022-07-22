@@ -20,7 +20,7 @@ def get_unique_numbers(numbers):
 
 
 uni_num = get_unique_numbers(num)
-new_num=list(set(num))
+new_num = list(set(num))
 
 print(num)
 print(uni_num)
