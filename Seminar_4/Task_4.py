@@ -8,22 +8,35 @@
 
 import re
 
-input_str = input('Напишите редактируемый текст: ')
-new_file = open('Text.txt', 'w')
-new_file.writelines(input_str)
-new_file.close()
-print(input_str)
-
-with open('Text.txt', 'r') as new_file:
-    for line in new_file:
-        output_str = line
-print(output_str)
+input_string = input('Напишите редактируемый текст: ')
 
 
-output_str = re.sub("[^А-Яа-я- ]", "", input_str)
+def add_in_file(string):
+    file = open('Text.txt', 'w')
+    file.writelines(string)
+    file.close()
+    return(file)
 
 
-with open('Text.txt', 'a') as new_file:
-    new_file.write('\n' + output_str)
-print(output_str)
+def read_and_get_from_file(file):
+    with open('Text.txt', 'r') as file:
+        for line in file:
+            string = line
+    return string
 
+
+def edit_file(string):
+    string = re.sub("[^А-Яа-я- ]", "", string)
+    return string
+
+
+def write_in_file(string):
+    with open('Text.txt', 'a') as file:
+        file.write('\n' + string)
+
+
+new_file = add_in_file(input_string)
+output_string = read_and_get_from_file(new_file)
+output_string = edit_file(output_string)
+new_file = write_in_file(output_string)
+print('Всё готово! Проверьте файл.')
