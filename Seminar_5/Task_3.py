@@ -13,3 +13,35 @@
 # Это — 16-ричная система, поищите, как правильнее и быстрее получать эти символы.
 # Cложите получившиеся числа и верните из функции в качестве ответа вместе с преобразованным списком
 
+# , 'basic', 'fortran', 'java', 'c++',
+program_language = ['python', 'c#', 'pascal']
+# 'delphi', 'php', 'javascript', 'kotlin', 'sql', 'assembler', 'Plankalkül']
+num_list = [i for i in range(1, len(program_language)+1)]
+
+# print(program_language)
+print(num_list)
+program_language = [program_language[i].upper()
+                    for i in range(len(program_language))]
+# program_language = map(lambda i: program_language[i].upper(), program_language)  В случае приминения функции "map", функция "upper()" не работает(
+print(program_language)
+
+
+def get_tuple(language, numbers):
+    find_tuple = [(numbers[i], language[i]) for i in range(len(numbers))]
+    return find_tuple
+
+
+def get_point(prog):
+    point_list = []
+    for i in range(len(prog)):
+        summa = 0
+        for j in range(len(prog[i])):
+            summa += ord(prog[i][j])
+        point_list.append(summa)
+    return point_list
+
+# find_list=filter(lambda x: )
+point = get_point(program_language)
+print(point)
+ftuple = get_tuple(program_language, num_list)
+print(ftuple)

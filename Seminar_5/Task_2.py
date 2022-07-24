@@ -13,10 +13,12 @@ import random
 import os
 
 
-os.system('cls') 
+os.system('cls')
+
+
 def digit_check():
     try:
-        lenght = int(input('Введите число \n'))
+        lenght = int(input('\n'))
         return lenght
     except ValueError:
         print('Это должно быть число\n')
@@ -27,14 +29,14 @@ def player_vs_player(msg):
     player1 = input(
         'Давайте знакомиться! Первый игрок, представьтесь, пожалуйста ')
     player2 = input('Второй игрок, как к Вам можно обращаться? ')
-    bank = 2021
+    bank = 200
     move = True
     while bank > 0:
         if move == True:
             print(f'{player1}, {random.choice(msg)}\n')
             player_move = digit_check()
-            while player_move > 28:
-                print(f'{player1}, нельзя брать больше 28 конфет')
+            while player_move > 28 or player_move < 1:
+                print(f'{player1}, нужно взять от 1 до 28 конфет')
                 player_move = digit_check()
 
             bank -= player_move
@@ -43,8 +45,8 @@ def player_vs_player(msg):
         else:
             print(f'{player2}, {random.choice(msg)}\n')
             player_move = digit_check()
-            while player_move > 28:
-                print(f'{player2}, нельзя брать больше 28 конфет')
+            while player_move > 28 or player_move < 1:
+                print(f'{player2}, нужно взять от 1 до 28 конфет')
                 player_move = digit_check()
             bank -= player_move
             print(f'Осталось {bank} конфет\n')
@@ -57,16 +59,16 @@ def player_vs_player(msg):
 
 
 def player_vs_bot(msg):
-    player = input('Как Вас зовут? ')
-    bank = 2021
+    player = input('Здравствуйте! Давайте познакомимся! Как Вас зовут? ')
+    bank = 200
     bot_move = random.randint(1, 29)
     move = True
     while bank > 0:
         if move == True:
             print(f'{player}, {random.choice(msg)}\n')
             player_move = digit_check()
-            while player_move > 28:
-                print(f'{player}, нельзя брать больше 28 конфет')
+            while player_move > 28 or player_move < 1:
+                print(f'{player}, нужно взять от 1 до 28 конфет')
                 player_move = digit_check()
             print(f'Осталось {bank} конфет\n')
             move = False
@@ -84,15 +86,16 @@ def player_vs_bot(msg):
 
 
 def player_vs_smart_bot(msg):
-    player = input('Как Вас зовут? ')
-    bank = 50
+    player = input(
+        'Здравствуйте! Давайте познакомимся! Представьтесь пожалуйста. ')
+    bank = 200
     move = True
     while bank > 0:
         if move == True:
             print(f'{player}, {random.choice(msg)}\n')
             player_move = digit_check()
-            while player_move > 28:
-                print(f'{player}, нельзя брать больше 28 конфет')
+            while player_move > 28 or player_move < 1:
+                print(f'{player}, нужно взять от 1 до 28 конфет')
                 player_move = digit_check()
             bank -= player_move
             print(f'Осталось {bank} конфет\n')
@@ -121,13 +124,13 @@ def start_game():
     player_vs_bot = '2. Против компьютера'
     player_vs_smart_bot = '3. Против "умного" компьютера'
 
-    print(f'{greetings}\n\n{regulations}\n\n{choice_play}\n\n{player_vs_player}\n{player_vs_bot}\n{player_vs_smart_bot}\n')
+    print(f'{greetings}\n\n{regulations}\n\n{choice_play}\n\n{player_vs_player}\n{player_vs_bot}\n{player_vs_smart_bot}')
     choice_num = digit_check()
     choice_rival(choice_num)
 
 
 def end_game():
-    gratitude = 'Спасибо что играли в мою игру! Если хотите поиграть ещё? да/нет'
+    gratitude = 'Спасибо что играли в мою игру! Хотите поиграть ещё? да/нет'
     parting = 'До свидания!'
     print(f'{gratitude}\n')
     player_choice = input()
@@ -152,5 +155,5 @@ def choice_rival(number):
 
 messages = ['возьмите конфеты', 'берите, не стесняйтесь', 'ваша очередь',
             'ваш ход', 'сколько конфет возьмёте?', 'теперь вы', 'ваша очередь брать конфеты']
-           
+
 start_game()
