@@ -18,12 +18,9 @@ program_language = ['python', 'c#', 'pascal']
 # 'delphi', 'php', 'javascript', 'kotlin', 'sql', 'assembler', 'Plankalkül']
 num_list = [i for i in range(1, len(program_language)+1)]
 
-# print(program_language)
-print(num_list)
 program_language = [program_language[i].upper()
                     for i in range(len(program_language))]
 # program_language = map(lambda i: program_language[i].upper(), program_language)  В случае приминения функции "map", функция "upper()" не работает(
-print(program_language)
 
 
 def get_tuple(language, numbers):
@@ -40,8 +37,16 @@ def get_point(prog):
         point_list.append(summa)
     return point_list
 
-# find_list=filter(lambda x: )
+
+# def filter_list(tup, points):
+#     for i in range(len(points)):
+#         tup = list(filter(lambda x: points[i] % tup[()], points))
+#     return tup
+
+
 point = get_point(program_language)
 print(point)
-ftuple = get_tuple(program_language, num_list)
-print(ftuple)
+find_tuple = get_tuple(program_language, num_list)
+print(find_tuple)
+# sort_list = filter_list(find_tuple, point)
+# print(sort_list)

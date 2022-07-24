@@ -29,7 +29,7 @@ def player_vs_player(msg):
     player1 = input(
         'Давайте знакомиться! Первый игрок, представьтесь, пожалуйста ')
     player2 = input('Второй игрок, как к Вам можно обращаться? ')
-    bank = 200
+    bank = 2021
     move = True
     while bank > 0:
         if move == True:
@@ -60,8 +60,7 @@ def player_vs_player(msg):
 
 def player_vs_bot(msg):
     player = input('Здравствуйте! Давайте познакомимся! Как Вас зовут? ')
-    bank = 200
-    bot_move = random.randint(1, 29)
+    bank = 2021
     move = True
     while bank > 0:
         if move == True:
@@ -73,6 +72,7 @@ def player_vs_bot(msg):
             print(f'Осталось {bank} конфет\n')
             move = False
         else:
+            bot_move = random.randint(1, 29)
             print(f'Ходит компьютер\n')
             bank -= bot_move
             print(f'Компьютер взял {bot_move} конфет')
@@ -88,7 +88,7 @@ def player_vs_bot(msg):
 def player_vs_smart_bot(msg):
     player = input(
         'Здравствуйте! Давайте познакомимся! Представьтесь пожалуйста. ')
-    bank = 200
+    bank = 2021
     move = True
     while bank > 0:
         if move == True:
