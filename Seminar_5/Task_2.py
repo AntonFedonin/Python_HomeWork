@@ -30,7 +30,8 @@ def player_vs_player(msg):
         'Давайте знакомиться! Первый игрок, представьтесь, пожалуйста ')
     player2 = input('Второй игрок, как к Вам можно обращаться? ')
     bank = 2021
-    move = True
+    first_move = random.choice([True, False])
+    move = first_move
     while bank > 0:
         if move == True:
             print(f'{player1}, {random.choice(msg)}\n')
@@ -61,7 +62,8 @@ def player_vs_player(msg):
 def player_vs_bot(msg):
     player = input('Здравствуйте! Давайте познакомимся! Как Вас зовут? ')
     bank = 2021
-    move = True
+    first_move = random.choice([True, False])
+    move = first_move
     while bank > 0:
         if move == True:
             print(f'{player}, {random.choice(msg)}\n')
@@ -89,7 +91,8 @@ def player_vs_smart_bot(msg):
     player = input(
         'Здравствуйте! Давайте познакомимся! Представьтесь пожалуйста. ')
     bank = 2021
-    move = True
+    first_move = random.choice([True, False])
+    move = first_move
     while bank > 0:
         if move == True:
             print(f'{player}, {random.choice(msg)}\n')
