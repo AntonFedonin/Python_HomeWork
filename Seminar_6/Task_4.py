@@ -5,3 +5,18 @@
 # список: ["йцу", "фыв", "ячс", "цук", "йцукен"], ищем: "йцу", ответ: -1
 # список: ["123", "234", 123, "567"], ищем: "123", ответ: -1
 # список: [], ищем: "123", ответ: -1
+
+from gettext import find
+
+
+value1 = 'йцу'
+value2 = '"йцу", "фыв", "ячс", "цук", "йцукен", "йцу"'
+
+# n = 3
+# def get_sec_entry(val1, val2):
+#     start = val2.                                     #val2.find(val1)
+#     return val2.find(val1, start + 1)
+
+# print(get_sec_entry(value1, value2))
+res = value2.find(value1)
+print(res)
